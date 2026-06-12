@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RipMyBadHabits — Break the Cycle. Finally.</title>
+  <meta name="description" content="No-BS strategies backed by science to help you quit vaping, stop doom scrolling, beat procrastination, and rip out every bad habit holding you back.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ripmybadhabits.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ripmybadhabits.com">
+  <meta property="og:title" content="RipMyBadHabits — Break the Cycle. Finally.">
+  <meta property="og:description" content="No-BS strategies backed by science to help you quit vaping, stop doom scrolling, beat procrastination, and rip out every bad habit holding you back.">
+  <meta property="og:image" content="https://ripmybadhabits.com/og-image.jpg">
+  <meta property="og:site_name" content="RipMyBadHabits">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ripmybadhabits">
+  <meta name="twitter:title" content="RipMyBadHabits — Break the Cycle. Finally.">
+  <meta name="twitter:description" content="No-BS strategies backed by science to help you break every bad habit holding you back.">
+  <meta name="twitter:image" content="https://ripmybadhabits.com/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RipMyBadHabits",
+    "url": "https://ripmybadhabits.com",
+    "description": "No-BS strategies to break bad habits backed by behavioral science",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ripmybadhabits.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================
+       CUSTOM PROPERTIES
+    ================================================ */
+    :root {
+      --bg:           #0B0B0C;
+      --bg-alt:       #0F0F11;
+      --surface:      #141416;
+      --surface-hi:   #1C1C1F;
+      --surface-rsd:  #202024;
+      --accent:       #E8321F;
+      --accent-dk:    #C02718;
+      --accent-glow:  rgba(232, 50, 31, 0.18);
+      --text-1:       #F0EBE2;
+      --text-2:       #8A8A96;
+      --text-3:       #4A4A58;
+      --border:       #252528;
+      --border-sub:   #1C1C1F;
+
+      --f-display:    'Anton', sans-serif;
+      --f-heading:    'Barlow Condensed', sans-serif;
+      --f-body:       'Inter', sans-serif;
+
+      --r:            6px;
+      --r-lg:         10px;
+      --ease:         0.22s ease;
+      --mw:           1200px;
+      --sp:           clamp(56px, 7vw, 96px);
+    }
+
+    /* ================================================
+       RESET
+    ================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-1);
+      font-family: var(--f-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img  { max-width: 100%; height: auto; display: block; }
+    a    { color: inherit; text-decoration: none; }
+    ul   { list-style: none; }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--f-body);
+    }
+
+    /* ================================================
+       UTILITIES
+    ================================================ */
+    .wrap {
+      max-width: var(--mw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.08;
+      color: var(--text-1);
+    }
+
+    .vh {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Scroll-reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* Ad slot styling */
+    .ad-slot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--r);
+      color: var(--text-3);
+      font-family: var(--f-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .ad-leader  { height: 90px;  max-width: 728px; width: 100%; margin: 0 auto; }
+    .ad-rect    { height: 250px; width: 300px; }
+    .ad-banner  { height: 90px;  max-width: 728px; width: 100%; margin: 0 auto; }
+    .ad-wrap    { padding: 20px 0; }
+
+    /* ================================================
+       HEADER
+    ================================================ */
+    #hdr {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 18px 0;
+      transition: background var(--ease), box-shadow var(--ease), padding var(--ease);
+    }
+    #hdr.scrolled {
+      background: rgba(11, 11, 12, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 11px 0;
+    }
+
+    .hdr-in {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: var(--f-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .logo-r   { color: var(--accent); }
+    .logo-w   { color: var(--text-1); }
+
+    .main-nav {
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+      .main-nav a {
+        font-family: var(--f-heading);
+        font-weight: 600;
+        font-size: 0.88rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-2);
+        transition: color var(--ease);
+      }
+      .main-nav a:hover { color: var(--text-1); }
+    }
+
+    .hdr-cta {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      .hdr-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: var(--accent);
+        color: #fff;
+        font-family: var(--f-heading);
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 9px 18px;
+        border-radius: var(--r);
+        transition: background var(--ease), transform var(--ease);
+        white-space: nowrap;
+      }
+      .hdr-cta:hover { background: var(--accent-dk); transform: translateY(-1px); }
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+      z-index: 201;
+    }
+    @media (min-width: 900px) { .burger { display: none; } }
+
+    .burger span {
+      display: block;
+      width: 23px;
+      height: 2px;
+      background: var(--text-1);
+      transition: transform var(--ease), opacity var(--ease);
+      transform-origin: center;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav Overlay */
+    #mob-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 199;
+      padding: 96px 32px 40px;
+      flex-direction: column;
+      gap: 0;
+    }
+    #mob-nav.open { display: flex; }
+
+    #mob-nav a {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 7vw, 3rem);
+      text-transform: uppercase;
+      color: var(--text-1);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--ease);
+    }
+    #mob-nav a:hover { color: var(--accent); }
+
+    /* ================================================
+       HERO
+    ================================================ */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 90px;
+      background: var(--bg-alt);
+    }
+
+    /* Ambient red glow in corner */
+    #hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 60%; height: 70%;
+      background: radial-gradient(ellipse at 0% 100%, rgba(232,50,31,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 40%; height: 50%;
+      background: radial-gradient(ellipse at 100% 0%, rgba(232,50,31,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 830px; }
+
+    .hero-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .hero-flag span {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+    .hero-flag-bar {
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .hero-h1 {
+      font-family: var(--f-display);
+      font-size: clamp(3.6rem, 10.5vw, 7.8rem);
+      text-transform: uppercase;
+      line-height: 0.91;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .hl-muted { display: block; color: var(--text-2); font-size: 0.68em; }
+    .hl-white { display: block; color: var(--text-1); margin: 2px 0; }
+    .hl-red   {
+      display: block;
+      color: var(--accent);
+      position: relative;
+      padding-bottom: 8px;
+    }
+    /* Scratch underline */
+    .hl-red::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 85%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      opacity: 0.35;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      color: var(--text-2);
+      max-width: 520px;
+      margin-bottom: 38px;
+      line-height: 1.65;
+    }
+    .hero-sub strong { color: var(--text-1); font-weight: 500; }
+
+    .hero-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 490px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 500px) { .hero-form { flex-direction: row; } }
+
+    .hero-form input {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 14px 18px;
+      color: var(--text-1);
+      font-family: var(--f-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--ease), background var(--ease);
+      min-width: 0;
+    }
+    .hero-form input::placeholder { color: var(--text-3); }
+    .hero-form input:focus {
+      border-color: var(--accent);
+      background: rgba(232,50,31,0.05);
+    }
+    .hero-form button {
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      border-radius: var(--r);
+      white-space: nowrap;
+      transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+    }
+    .hero-form button:hover {
+      background: var(--accent-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(232,50,31,0.32);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-3);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: clamp(20px, 4vw, 40px);
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .h-stat-num {
+      display: block;
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--text-1);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .h-stat-lbl {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Torn edge at bottom of hero */
+    .torn {
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      line-height: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .torn svg { width: 100%; display: block; }
+
+    /* ================================================
+       CATEGORIES BAR
+    ================================================ */
+    #cats {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .cats-scroll {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .cats-scroll::-webkit-scrollbar { display: none; }
+
+    .cat-a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 15px 18px;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color var(--ease), border-color var(--ease), background var(--ease);
+      flex-shrink: 0;
+    }
+    .cat-a:hover, .cat-a.on {
+      color: var(--text-1);
+      border-bottom-color: var(--accent);
+      background: rgba(232,50,31,0.05);
+    }
+
+    /* ================================================
+       ARTICLES
+    ================================================ */
+    #articles {
+      padding: var(--sp) 0;
+      background: var(--bg);
+    }
+
+    .sec-hdr {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+      transition: gap var(--ease);
+    }
+    .view-all:hover { gap: 10px; }
+
+    /* Grid — 3 col desktop, featured spans 2 */
+    .art-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 640px) {
+      .art-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .art-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .art-card.feat {
+        grid-column: span 2;
+        flex-direction: row;
+      }
+      .art-card.feat .c-img  { flex: 1; height: auto; min-height: 280px; }
+      .art-card.feat .c-body { flex: 1; }
+      .art-card.feat > a     { flex: 1; }
+    }
+
+    /* Card */
+    .art-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+    }
+    .art-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(232,50,31,0.6);
+      box-shadow: 0 14px 44px rgba(0,0,0,0.45), 0 0 0 1px rgba(232,50,31,0.15);
+    }
+    /* Featured card on desktop */
+    @media (min-width: 1024px) {
+      .art-card.feat {
+        display: flex;
+        flex-direction: row;
+      }
+      .art-card.feat > a {
+        display: block;
+        flex: 1;
+      }
+      .art-card.feat .c-img {
+        height: 100%;
+        min-height: 280px;
+      }
+    }
+
+    .art-card > a { display: block; }
+
+    /* Card image area */
+    .c-img {
+      position: relative;
+      height: 196px;
+      overflow: hidden;
+    }
+    .c-img-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.4s ease;
+    }
+    .art-card:hover .c-img-bg { transform: scale(1.05); }
+
+    /* Subtle grid texture on cards */
+    .c-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 29px),
+        repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 29px);
+      pointer-events: none;
+    }
+
+    /* Thumbnail gradients — each article gets a unique one */
+    .t-doom      { background: linear-gradient(140deg, #06101e 0%, #0c3060 55%, #061828 100%); }
+    .t-vape      { background: linear-gradient(140deg, #0a1a20 0%, #183540 55%, #0a2030 100%); }
+    .t-proc      { background: linear-gradient(140deg, #180600 0%, #3c1800 55%, #602800 100%); }
+    .t-sugar     { background: linear-gradient(140deg, #1c0010 0%, #520020 55%, #900030 100%); }
+    .t-stress    { background: linear-gradient(140deg, #041508 0%, #0c3016 55%, #184824 100%); }
+    .t-apps      { background: linear-gradient(140deg, #0b0118 0%, #200038 55%, #3c0068 100%); }
+    .t-science   { background: linear-gradient(140deg, #040410 0%, #0c0c28 55%, #181848 100%); }
+    .t-21days    { background: linear-gradient(140deg, #120e06 0%, #281c08 55%, #503814 100%); }
+
+    .c-badge {
+      position: absolute;
+      top: 13px; left: 13px;
+      z-index: 1;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      padding: 3px 9px;
+      border-radius: 3px;
+    }
+
+    .c-rtime {
+      position: absolute;
+      bottom: 13px; right: 13px;
+      z-index: 1;
+      font-family: var(--f-heading);
+      font-weight: 600;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.55);
+      background: rgba(0,0,0,0.48);
+      padding: 3px 8px;
+      border-radius: 3px;
+      backdrop-filter: blur(4px);
+    }
+
+    .c-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      opacity: 0.22;
+      transition: opacity var(--ease);
+    }
+    .art-card:hover .c-icon { opacity: 0.32; }
+
+    /* Card body */
+    .c-body {
+      padding: 20px 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .c-title {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      text-transform: uppercase;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text-1);
+      margin-bottom: 10px;
+      transition: color var(--ease);
+    }
+    .art-card:hover .c-title { color: #fff; }
+    .c-title a { color: inherit; }
+
+    .c-exc {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.62;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .c-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-sub);
+    }
+    .c-date {
+      font-size: 0.73rem;
+      color: var(--text-3);
+    }
+    .c-readmore {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      transition: gap var(--ease);
+    }
+    .c-readmore:hover { gap: 9px; }
+
+    /* ================================================
+       START HERE — QUIZ CTA
+    ================================================ */
+    #start {
+      padding: var(--sp) 0;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .start-inner { max-width: 740px; margin: 0 auto; text-align: center; }
+
+    .start-h2 {
+      font-family: var(--f-display);
+      font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+      text-transform: uppercase;
+      line-height: 1.02;
+      color: var(--text-1);
+      margin-bottom: 14px;
+    }
+    .start-h2 em { font-style: normal; color: var(--accent); }
+
+    .start-sub {
+      color: var(--text-2);
+      font-size: 1rem;
+      margin-bottom: 38px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 38px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all var(--ease);
+    }
+    .chip:hover, .chip.on {
+      background: rgba(232,50,31,0.1);
+      border-color: var(--accent);
+      color: var(--text-1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 18px rgba(232,50,31,0.18);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: var(--r);
+      transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--accent-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(232,50,31,0.36);
+    }
+
+    /* ================================================
+       ABOUT
+    ================================================ */
+    #about {
+      padding: var(--sp) 0;
+      background: var(--bg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+    }
+
+    .about-eyebrow { margin-bottom: 14px; }
+    .about-title   { margin-bottom: 22px; }
+
+    .about-p {
+      color: var(--text-2);
+      font-size: 0.975rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .about-p strong { color: var(--text-1); font-weight: 600; }
+
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 6px;
+      transition: gap var(--ease);
+    }
+    .about-link:hover { gap: 13px; }
+
+    /* Manifesto card */
+    .manifesto {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--r-lg);
+      padding: 32px 30px;
+    }
+    .mani-hdr {
+      font-family: var(--f-heading);
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
+    .mani-list { display: flex; flex-direction: column; gap: 18px; }
+    .mani-item { display: flex; gap: 13px; align-items: flex-start; }
+    .mani-dot {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .mani-dot svg { width: 9px; height: 9px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .mani-txt {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .mani-txt strong { color: var(--text-1); font-weight: 600; }
+
+    /* ================================================
+       NEWSLETTER
+    ================================================ */
+    #newsletter {
+      padding: clamp(44px, 6vw, 72px) 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .nl-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .nl-grid { grid-template-columns: 1fr 1fr; gap: 52px; }
+    }
+
+    .nl-title { margin-bottom: 10px; }
+    .nl-sub { color: var(--text-2); font-size: 0.93rem; }
+
+    .nl-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    @media (min-width: 480px) { .nl-form { flex-direction: row; } }
+
+    .nl-form input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 13px 16px;
+      color: var(--text-1);
+      font-family: var(--f-body);
+      font-size: 0.93rem;
+      outline: none;
+      transition: border-color var(--ease);
+      min-width: 0;
+    }
+    .nl-form input::placeholder { color: var(--text-3); }
+    .nl-form input:focus { border-color: var(--accent); }
+
+    .nl-form button {
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      border-radius: var(--r);
+      white-space: nowrap;
+      transition: background var(--ease);
+    }
+    .nl-form button:hover { background: var(--accent-dk); }
+
+    .aff-note {
+      margin-top: 12px;
+      font-size: 0.74rem;
+      color: var(--text-3);
+      padding: 10px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      line-height: 1.6;
+    }
+    .aff-note strong { color: var(--text-2); }
+
+    /* ================================================
+       FOOTER
+    ================================================ */
+    footer {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 52px 0 24px;
+    }
+
+    .ft-main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 640px) {
+      .ft-main { grid-template-columns: 2fr 1fr 1fr; gap: 52px; }
+    }
+
+    .ft-brand .logo { margin-bottom: 14px; font-size: 1.2rem; display: block; }
+    .ft-tagline {
+      font-size: 0.86rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      max-width: 270px;
+      margin-bottom: 22px;
+    }
+
+    .ft-social { display: flex; gap: 9px; }
+    .soc {
+      width: 35px; height: 35px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-2);
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: background var(--ease), color var(--ease), border-color var(--ease);
+      text-decoration: none;
+    }
+    .soc:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .ft-col-hdr {
+      font-family: var(--f-heading);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-1);
+      margin-bottom: 16px;
+    }
+    .ft-links { display: flex; flex-direction: column; gap: 9px; }
+    .ft-links a {
+      font-size: 0.86rem;
+      color: var(--text-2);
+      transition: color var(--ease);
+    }
+    .ft-links a:hover { color: var(--text-1); }
+
+    .ft-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    @media (min-width: 640px) {
+      .ft-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+    }
+
+    .ft-copy { font-size: 0.78rem; color: var(--text-3); }
+    .ft-legal { display: flex; gap: 18px; flex-wrap: wrap; }
+    .ft-legal a { font-size: 0.76rem; color: var(--text-3); transition: color var(--ease); }
+    .ft-legal a:hover { color: var(--text-2); }
+
+  </style>
+</head>
+<body>
+
+<!-- ================================================
+     HEADER
+================================================ -->
+<header id="hdr" role="banner">
+  <div class="wrap">
+    <div class="hdr-in">
+      <a href="/" class="logo" aria-label="RipMyBadHabits home">
+        <span class="logo-r">Rip</span><span class="logo-w">MyBadHabits</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#cats">Topics</a>
+        <a href="#articles">Articles</a>
+        <a href="#about">About</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+
+      <a href="#start" class="hdr-cta">Start Here →</a>
+
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mob-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<nav id="mob-nav" aria-label="Mobile navigation" hidden>
+  <a href="#cats"        onclick="closeNav()">Topics</a>
+  <a href="#articles"    onclick="closeNav()">Articles</a>
+  <a href="#start"       onclick="closeNav()">Start Here</a>
+  <a href="#about"       onclick="closeNav()">About</a>
+  <a href="#newsletter"  onclick="closeNav()">Newsletter</a>
+</nav>
+
+
+<!-- ================================================
+     HERO
+================================================ -->
+<section id="hero" aria-labelledby="hero-h1">
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <div class="hero-flag reveal">
+        <span class="hero-flag-bar" aria-hidden="true"></span>
+        <span>Real strategies. Zero excuses.</span>
+      </div>
+
+      <h1 class="hero-h1 reveal d1" id="hero-h1">
+        <span class="hl-muted">Your bad habits</span>
+        <span class="hl-white">Don't define you.</span>
+        <span class="hl-red">Rip them out.</span>
+      </h1>
+
+      <p class="hero-sub reveal d2">
+        <strong>You've tried before. This time is different</strong> — because you'll actually understand why habits stick and exactly how to break them. Behavioral science, no fluff.
+      </p>
+
+      <form class="hero-form reveal d2" id="heroForm" onsubmit="formOk(event,'heroBtn','heroIn')">
+        <label for="heroIn" class="vh">Your email address</label>
+        <input type="email" id="heroIn" name="email" placeholder="Your email address" autocomplete="email" required>
+        <button type="submit" id="heroBtn">Rip My Habits →</button>
+      </form>
+      <p class="hero-note reveal d3">No spam. No fluff. Unsubscribe any time.</p>
+
+      <div class="hero-stats reveal d3" aria-label="Site highlights">
+        <div>
+          <span class="h-stat-num">47+</span>
+          <span class="h-stat-lbl">Evidence-backed guides</span>
+        </div>
+        <div>
+          <span class="h-stat-num">14K+</span>
+          <span class="h-stat-lbl">Habits ripped so far</span>
+        </div>
+        <div>
+          <span class="h-stat-num">Zero</span>
+          <span class="h-stat-lbl">BS tolerance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Torn paper edge -->
+  <div class="torn" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 52" preserveAspectRatio="none" height="52">
+      <path d="M0,52 L0,24 L36,12 L72,28 L108,8 L144,22 L180,6 L216,20 L252,10 L288,26 L324,8 L360,22 L396,6 L432,18 L468,32 L504,10 L540,24 L576,4 L612,18 L648,30 L684,10 L720,22 L756,6 L792,20 L828,34 L864,12 L900,26 L936,8 L972,22 L1008,4 L1044,18 L1080,32 L1116,12 L1152,26 L1188,8 L1224,20 L1260,36 L1296,14 L1332,28 L1368,10 L1404,24 L1440,8 L1440,52 Z" fill="#0B0B0C"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ================================================
+     AD SLOT — TOP LEADERBOARD
+================================================ -->
+<!--
+  AD SLOT: TOP LEADERBOARD
+  Recommended: Google AdSense Responsive / 728×90 desktop, 320×100 mobile
+  Position: Below hero fold — prime visibility zone, high CPM
+  Implementation: Replace div below with AdSense <ins> tag
+-->
+<div class="ad-wrap" aria-hidden="true">
+  <div class="wrap">
+    <!-- AD SLOT: LEADERBOARD TOP -->
+    <div class="ad-slot ad-leader">Ad — 728×90 Leaderboard</div>
+  </div>
+</div>
+<!-- END AD SLOT -->
+
+
+<!-- ================================================
+     CATEGORIES
+================================================ -->
+<nav id="cats" aria-label="Browse by topic">
+  <div class="cats-scroll" role="list">
+    <a href="#articles" class="cat-a on"  role="listitem">🔥 All Topics</a>
+    <a href="#"         class="cat-a"     role="listitem">🚭 Addiction</a>
+    <a href="#"         class="cat-a"     role="listitem">📱 Digital Habits</a>
+    <a href="#"         class="cat-a"     role="listitem">⏰ Productivity</a>
+    <a href="#"         class="cat-a"     role="listitem">🥗 Health &amp; Diet</a>
+    <a href="#"         class="cat-a"     role="listitem">🧠 Mental Health</a>
+    <a href="#"         class="cat-a"     role="listitem">❤️ Relationships</a>
+  </div>
+</nav>
+
+
+<!-- ================================================
+     ARTICLES
+================================================ -->
+<main id="articles" aria-labelledby="art-hdr">
+  <div class="wrap">
+
+    <header class="sec-hdr reveal">
+      <div>
+        <span class="eyebrow">Latest Articles</span>
+        <h2 class="sec-title" id="art-hdr">Pick Your Battle</h2>
+      </div>
+      <a href="/articles" class="view-all">All Articles →</a>
+    </header>
+
+    <div class="art-grid" role="list">
+
+      <!-- ——————————————————————————————
+           ARTICLE 1 — FEATURED (spans 2 cols on desktop)
+      —————————————————————————————————— -->
+      <article class="art-card feat reveal" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/doom-scrolling-guide" aria-label="Read: How to Stop Doom Scrolling">
+          <div class="c-img">
+            <div class="c-img-bg t-doom"></div>
+            <div class="c-icon" aria-hidden="true">📱</div>
+            <span class="c-badge">Digital Habits</span>
+            <span class="c-rtime">9 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/doom-scrolling-guide">How to Stop Doom Scrolling — A Step-by-Step Guide</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            You open Instagram "just for a second." Forty-five minutes later you're watching a stranger's cat and quietly hating yourself. Here's how to actually stop — not tomorrow, today — using the 3-stage digital detox method backed by attention research.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">Jun 3, 2026</span>
+            <a href="/doom-scrolling-guide" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ——————————————————————————————
+           ARTICLE 2
+      —————————————————————————————————— -->
+      <article class="art-card reveal d1" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/quit-vaping-guide">
+          <div class="c-img">
+            <div class="c-img-bg t-vape"></div>
+            <div class="c-icon" aria-hidden="true">🚭</div>
+            <span class="c-badge">Addiction</span>
+            <span class="c-rtime">12 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/quit-vaping-guide">How to Quit Vaping — What Actually Works in 2026</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            Every quit attempt teaches you something. Most guides tell you what to do. This one tells you why everything else failed — and what's different with the method that actually works.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">May 28, 2026</span>
+            <a href="/quit-vaping-guide" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ——————————————————————————————
+           ARTICLE 3
+      —————————————————————————————————— -->
+      <article class="art-card reveal d2" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/stop-procrastinating">
+          <div class="c-img">
+            <div class="c-img-bg t-proc"></div>
+            <div class="c-icon" aria-hidden="true">⏰</div>
+            <span class="c-badge">Productivity</span>
+            <span class="c-rtime">10 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/stop-procrastinating">How to Stop Procrastinating (For Real This Time)</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            Procrastination isn't laziness. It's an emotion regulation problem — and once you see it that way, the fix becomes obvious. Here's the science and the actual strategy.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">May 20, 2026</span>
+            <a href="/stop-procrastinating" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ——————————————————————————————
+           ARTICLE 4
+      —————————————————————————————————— -->
+      <article class="art-card reveal" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/break-sugar-addiction">
+          <div class="c-img">
+            <div class="c-img-bg t-sugar"></div>
+            <div class="c-icon" aria-hidden="true">🍬</div>
+            <span class="c-badge">Health &amp; Diet</span>
+            <span class="c-rtime">11 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/break-sugar-addiction">How to Break a Sugar Addiction in 30 Days</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            Sugar hijacks the same dopamine circuits as cocaine — and that's not hyperbole, that's neuroscience. Here's a 30-day framework that works with your brain chemistry, not against it.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">May 14, 2026</span>
+            <a href="/break-sugar-addiction" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ——————————————————————————————
+           ARTICLE 5
+      —————————————————————————————————— -->
+      <article class="art-card reveal d1" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/stop-stress-eating">
+          <div class="c-img">
+            <div class="c-img-bg t-stress"></div>
+            <div class="c-icon" aria-hidden="true">🌙</div>
+            <span class="c-badge">Health &amp; Diet</span>
+            <span class="c-rtime">8 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/stop-stress-eating">How to Stop Stress Eating at Night</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            You're not hungry at 11pm — you're dysregulated. Understanding the difference between physical hunger and emotional appetite is step one. Here's step two through ten.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">May 8, 2026</span>
+            <a href="/stop-stress-eating" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ——————————————————————————————
+           ARTICLE 6
+      —————————————————————————————————— -->
+      <article class="art-card reveal d2" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/best-habit-apps">
+          <div class="c-img">
+            <div class="c-img-bg t-apps"></div>
+            <div class="c-icon" aria-hidden="true">📲</div>
+            <span class="c-badge">Tools</span>
+            <span class="c-rtime">7 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/best-habit-apps">Best Apps to Break Bad Habits (2026)</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            We tested 40+ habit apps so you don't have to. One stood out. Three were solid. The rest were glorified to-do lists with subscription fees. Here's the no-BS breakdown.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">Apr 30, 2026</span>
+            <a href="/best-habit-apps" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ——————————————————————————————
+           ARTICLE 7
+      —————————————————————————————————— -->
+      <article class="art-card reveal" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/science-of-bad-habits">
+          <div class="c-img">
+            <div class="c-img-bg t-science"></div>
+            <div class="c-icon" aria-hidden="true">🔬</div>
+            <span class="c-badge">Mental Health</span>
+            <span class="c-rtime">13 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/science-of-bad-habits">The Science of Why Bad Habits Are So Hard to Break</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            Willpower isn't your problem. Your basal ganglia is. Understanding the neuroscience of cue-routine-reward loops is what separates people who actually change from people who keep trying.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">Apr 22, 2026</span>
+            <a href="/science-of-bad-habits" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ——————————————————————————————
+           ARTICLE 8
+      —————————————————————————————————— -->
+      <article class="art-card reveal d1" role="listitem" itemscope itemtype="https://schema.org/Article">
+        <a href="/21-days-habit-myth">
+          <div class="c-img">
+            <div class="c-img-bg t-21days"></div>
+            <div class="c-icon" aria-hidden="true">📅</div>
+            <span class="c-badge">Science</span>
+            <span class="c-rtime">6 min read</span>
+          </div>
+        </a>
+        <div class="c-body">
+          <h3 class="c-title" itemprop="name">
+            <a href="/21-days-habit-myth">21 Days to Break a Habit — Myth or Reality?</a>
+          </h3>
+          <p class="c-exc" itemprop="description">
+            You've heard it forever. Turns out it's wrong — but the real number is more actionable than the myth. New UCL research puts the average closer to 66 days. Here's what that means for your plan.
+          </p>
+          <div class="c-foot">
+            <span class="c-date" itemprop="datePublished">Apr 15, 2026</span>
+            <a href="/21-days-habit-myth" class="c-readmore">Read More →</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- .art-grid -->
+  </div><!-- .wrap -->
+</main>
+
+
+<!-- ================================================
+     AD SLOT — MID-CONTENT RECTANGLE
+================================================ -->
+<!--
+  AD SLOT: MID-CONTENT RECTANGLE
+  Recommended: 300×250 or 336×280 (highest-performing sizes globally)
+  Position: Between articles and quiz CTA — high dwell time, engaged reader
+  Implementation: Replace div below with AdSense <ins> tag
+-->
+<div class="ad-wrap" style="padding:32px 0;" aria-hidden="true">
+  <div class="wrap" style="display:flex;justify-content:center;">
+    <!-- AD SLOT: MID RECTANGLE -->
+    <div class="ad-slot ad-rect">Ad — 300×250 Rectangle</div>
+  </div>
+</div>
+<!-- END AD SLOT -->
+
+
+<!-- ================================================
+     START HERE — QUIZ CTA
+================================================ -->
+<section id="start" aria-labelledby="start-h2">
+  <div class="wrap">
+    <div class="start-inner">
+      <span class="eyebrow reveal" style="justify-content:center;margin-bottom:14px;">Pick your starting point</span>
+      <h2 class="start-h2 reveal d1" id="start-h2">What habit are you<br>ready to <em>rip?</em></h2>
+      <p class="start-sub reveal d2">Select what you're working on. We'll send you a personalized reading list and 7-day action plan.</p>
+
+      <div class="chips reveal d2" role="group" aria-label="Habit categories">
+        <button class="chip" onclick="toggleChip(this)">🚭 Quit Vaping</button>
+        <button class="chip" onclick="toggleChip(this)">📱 Doom Scrolling</button>
+        <button class="chip" onclick="toggleChip(this)">⏰ Procrastination</button>
+        <button class="chip" onclick="toggleChip(this)">🍕 Stress Eating</button>
+        <button class="chip" onclick="toggleChip(this)">🍬 Sugar Addiction</button>
+        <button class="chip" onclick="toggleChip(this)">🍺 Alcohol</button>
+        <button class="chip" onclick="toggleChip(this)">😤 Anger &amp; Reactivity</button>
+        <button class="chip" onclick="toggleChip(this)">😴 Bad Sleep Habits</button>
+        <button class="chip" onclick="toggleChip(this)">💸 Overspending</button>
+        <button class="chip" onclick="toggleChip(this)">🧠 Negative Self-Talk</button>
+      </div>
+
+      <a href="/start-here" class="btn-primary reveal d3">Show Me My Plan →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     AD SLOT — PRE-FOOTER BANNER
+================================================ -->
+<!--
+  AD SLOT: PRE-FOOTER BANNER
+  Recommended: Google AdSense Responsive / 728×90
+  Position: Between Start Here and About — reader has shown strong intent
+  Implementation: Replace div below with AdSense <ins> tag
+-->
+<div class="ad-wrap" aria-hidden="true">
+  <div class="wrap">
+    <!-- AD SLOT: PRE-FOOTER BANNER -->
+    <div class="ad-slot ad-banner">Ad — 728×90 Banner</div>
+  </div>
+</div>
+<!-- END AD SLOT -->
+
+
+<!-- ================================================
+     ABOUT
+================================================ -->
+<section id="about" aria-labelledby="about-h2">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="reveal">
+        <span class="eyebrow about-eyebrow">Our Story</span>
+        <h2 class="sec-title about-title" id="about-h2">Built by People<br>Who've Been There</h2>
+        <p class="about-p">
+          We've been through it. <strong>Failed businesses, failed diets, failed attempts to change.</strong> The advice out there is either too soft ("just believe in yourself!") or too clinical to use in real life.
+        </p>
+        <p class="about-p">
+          RipMyBadHabits is the <strong>no-BS resource we wish we had</strong> — real strategies backed by behavioral science, written for people who are done making excuses and ready to actually do the work.
+        </p>
+        <a href="/about" class="about-link">Read Our Full Story →</a>
+      </div>
+
+      <div class="manifesto reveal d2">
+        <p class="mani-hdr">What We Stand For</p>
+        <ul class="mani-list" role="list">
+          <li class="mani-item">
+            <span class="mani-dot" aria-hidden="true">
+              <svg viewBox="0 0 10 8"><path d="M1 4.5l2.5 2.5L9 1.5"/></svg>
+            </span>
+            <p class="mani-txt"><strong>Science over hype.</strong> Every strategy we recommend is backed by peer-reviewed research — not Instagram wellness culture or motivational posters.</p>
+          </li>
+          <li class="mani-item">
+            <span class="mani-dot" aria-hidden="true">
+              <svg viewBox="0 0 10 8"><path d="M1 4.5l2.5 2.5L9 1.5"/></svg>
+            </span>
+            <p class="mani-txt"><strong>Honest about failure.</strong> Change is genuinely hard. We won't pretend it isn't — but we'll give you the best shot at making it actually stick this time.</p>
+          </li>
+          <li class="mani-item">
+            <span class="mani-dot" aria-hidden="true">
+              <svg viewBox="0 0 10 8"><path d="M1 4.5l2.5 2.5L9 1.5"/></svg>
+            </span>
+            <p class="mani-txt"><strong>No judgment.</strong> You're not weak. You're up against billion-dollar companies engineered to keep you hooked. Fight back with information.</p>
+          </li>
+          <li class="mani-item">
+            <span class="mani-dot" aria-hidden="true">
+              <svg viewBox="0 0 10 8"><path d="M1 4.5l2.5 2.5L9 1.5"/></svg>
+            </span>
+            <p class="mani-txt"><strong>Transparent about money.</strong> We use affiliate links. We only recommend what we'd personally use. Every bias is disclosed, every time.</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     NEWSLETTER
+================================================ -->
+<section id="newsletter" aria-labelledby="nl-h2">
+  <div class="wrap">
+    <div class="nl-grid">
+
+      <div class="reveal">
+        <span class="eyebrow" style="margin-bottom:12px;display:inline-flex;">Weekly Ammunition</span>
+        <h2 class="sec-title nl-title" id="nl-h2">The Rip Report</h2>
+        <p class="nl-sub">One email a week. One habit strategy, one piece of research, one actionable tool. No filler. No AI-generated motivation quotes. No BS.</p>
+      </div>
+
+      <div class="reveal d2">
+        <form class="nl-form" id="nlForm" onsubmit="formOk(event,'nlBtn','nlIn')">
+          <label for="nlIn" class="vh">Your email address</label>
+          <input type="email" id="nlIn" name="email" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit" id="nlBtn">Subscribe →</button>
+        </form>
+        <p class="aff-note">
+          <strong>Affiliate disclosure:</strong> Some links on this site earn us a commission at no cost to you. We only ever recommend products we've vetted ourselves.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer role="contentinfo">
+  <div class="wrap">
+
+    <div class="ft-main">
+
+      <div class="ft-brand">
+        <a href="/" class="logo" aria-label="RipMyBadHabits home">
+          <span class="logo-r">Rip</span><span class="logo-w">MyBadHabits</span>
+        </a>
+        <p class="ft-tagline">The no-BS resource for people who are done making excuses. Real strategies backed by science. No wellness theater.</p>
+        <div class="ft-social" role="list" aria-label="Social media">
+          <a href="#" class="soc" role="listitem" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="soc" role="listitem" aria-label="Instagram">IG</a>
+          <a href="#" class="soc" role="listitem" aria-label="YouTube">YT</a>
+          <a href="#" class="soc" role="listitem" aria-label="TikTok">TK</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="ft-col-hdr">Topics</p>
+        <nav aria-label="Topic categories">
+          <ul class="ft-links">
+            <li><a href="#">Addiction &amp; Vaping</a></li>
+            <li><a href="#">Digital Habits</a></li>
+            <li><a href="#">Procrastination</a></li>
+            <li><a href="#">Health &amp; Diet</a></li>
+            <li><a href="#">Mental Health</a></li>
+            <li><a href="#">Relationships</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div>
+        <p class="ft-col-hdr">Site</p>
+        <nav aria-label="Site links">
+          <ul class="ft-links">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/start-here">Start Here</a></li>
+            <li><a href="/newsletter">Newsletter</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/write-for-us">Write For Us</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 RipMyBadHabits.com — All rights reserved.</p>
+      <nav class="ft-legal" aria-label="Legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/affiliate-disclosure">Affiliate Disclosure</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ================================================
+     JS
+================================================ -->
+<script>
+  /* ---- Sticky header ---- */
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ---- Mobile nav ---- */
+  const burger  = document.getElementById('burgerBtn');
+  const mobNav  = document.getElementById('mob-nav');
+
+  burger.addEventListener('click', () => {
+    const isOpen = !mobNav.classList.contains('open');
+    mobNav.classList.toggle('open', isOpen);
+    mobNav.hidden = !isOpen;
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  function closeNav() {
+    mobNav.classList.remove('open');
+    mobNav.hidden = true;
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  /* ---- Category bar tabs ---- */
+  document.querySelectorAll('.cat-a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('.cat-a').forEach(x => x.classList.remove('on'));
+      a.classList.add('on');
+    });
+  });
+
+  /* ---- Habit chip toggle ---- */
+  function toggleChip(el) { el.classList.toggle('on'); }
+
+  /* ---- Form success handler ---- */
+  function formOk(e, btnId, inputId) {
+    e.preventDefault();
+    const btn = document.getElementById(btnId);
+    const inp = document.getElementById(inputId);
+    btn.textContent = "You're in ✓";
+    btn.style.background = '#16a34a';
+    btn.style.boxShadow = '0 8px 24px rgba(22,163,74,0.28)';
+    btn.disabled = true;
+    inp.disabled = true;
+  }
+
+  /* ---- Scroll-reveal via IntersectionObserver ---- */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
+  }
+
+  /* ---- Smooth scroll for in-page anchors ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = hdr.offsetHeight + 8;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        closeNav();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

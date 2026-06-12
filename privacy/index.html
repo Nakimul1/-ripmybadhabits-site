@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | RipMyBadHabit</title>
+  <meta name="description" content="Privacy Policy for RipMyBadHabit.com — how we collect, use, and protect your information.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://ripmybadhabit.com/privacy/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0B0B0C;--bg-alt:#0F0F11;--surface:#141416;
+      --accent:#E8321F;--accent-dk:#C02718;
+      --text-1:#F0EBE2;--text-2:#8A8A96;--text-3:#4A4A58;
+      --border:#252528;--border-sub:#1C1C1F;
+      --f-display:'Anton',sans-serif;--f-heading:'Barlow Condensed',sans-serif;--f-body:'Inter',sans-serif;
+      --r:6px;--r-lg:10px;--ease:.22s ease;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{background:var(--bg);color:var(--text-1);font-family:var(--f-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    button{cursor:pointer;border:none;background:none;font-family:var(--f-body)}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    @media(min-width:768px){.wrap{padding:0 32px}}
+
+    /* Header */
+    #hdr{position:fixed;top:0;left:0;right:0;z-index:200;padding:12px 0;background:rgba(11,11,12,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--border)}
+    .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-family:var(--f-display);font-size:1.3rem;letter-spacing:.02em;flex-shrink:0;line-height:1}
+    .logo-r{color:var(--accent)}.logo-w{color:var(--text-1)}
+    .main-nav{display:none}
+    @media(min-width:900px){.main-nav{display:flex;align-items:center;gap:26px}.main-nav a{font-family:var(--f-heading);font-weight:600;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);transition:color var(--ease)}.main-nav a:hover{color:var(--text-1)}}
+    .hdr-cta{display:none}
+    @media(min-width:600px){.hdr-cta{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#fff;font-family:var(--f-heading);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:var(--r);transition:background var(--ease);white-space:nowrap}.hdr-cta:hover{background:var(--accent-dk)}}
+    .burger{display:flex;flex-direction:column;gap:5px;padding:4px}
+    @media(min-width:900px){.burger{display:none}}
+    .burger span{display:block;width:23px;height:2px;background:var(--text-1);transition:transform var(--ease),opacity var(--ease);transform-origin:center}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    #mob-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:199;padding:90px 32px 40px;flex-direction:column}
+    #mob-nav.open{display:flex}
+    #mob-nav a{font-family:var(--f-display);font-size:clamp(1.8rem,6vw,2.6rem);text-transform:uppercase;color:var(--text-1);padding:16px 0;border-bottom:1px solid var(--border);transition:color var(--ease)}
+    #mob-nav a:hover{color:var(--accent)}
+
+    /* Page layout */
+    .page-wrap{max-width:760px;margin:0 auto;padding:92px 0 80px}
+    .page-hero{padding:32px 0 36px;border-bottom:1px solid var(--border);margin-bottom:48px}
+    .page-badge{display:inline-block;font-family:var(--f-heading);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);border:1px solid var(--border);padding:3px 10px;border-radius:3px;margin-bottom:14px}
+    .page-h1{font-family:var(--f-display);font-size:clamp(2.4rem,7vw,4.5rem);text-transform:uppercase;line-height:.92;letter-spacing:-.01em;color:var(--text-1);margin-bottom:16px}
+    .page-meta{font-size:.8rem;color:var(--text-3)}
+    .page-meta strong{color:var(--text-2)}
+
+    /* Legal prose */
+    .legal h2{font-family:var(--f-heading);font-weight:800;font-size:clamp(1.2rem,3vw,1.6rem);text-transform:uppercase;color:var(--text-1);margin:44px 0 14px;padding-top:4px;line-height:1.15;border-left:3px solid var(--accent);padding-left:14px}
+    .legal h3{font-family:var(--f-heading);font-weight:700;font-size:1.05rem;text-transform:uppercase;color:var(--text-1);margin:28px 0 10px;letter-spacing:.02em}
+    .legal h3::before{content:'— ';color:var(--accent)}
+    .legal p{font-size:.975rem;line-height:1.78;color:var(--text-2);margin-bottom:18px}
+    .legal p strong{color:var(--text-1);font-weight:600}
+    .legal ul{margin:0 0 18px;padding:0}
+    .legal ul li{font-size:.975rem;line-height:1.72;color:var(--text-2);margin-bottom:8px;padding-left:20px;position:relative}
+    .legal ul li::before{content:'';position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .legal ul li strong{color:var(--text-1);font-weight:600}
+    .legal a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+    .legal a:hover{color:var(--text-1)}
+    .legal hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+
+    /* Contact box */
+    .contact-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r-lg);padding:20px 24px;margin-top:32px}
+    .contact-box p{margin-bottom:6px;font-size:.9rem;color:var(--text-2)}
+    .contact-box p:last-child{margin-bottom:0}
+    .contact-box strong{color:var(--text-1)}
+
+    /* Footer */
+    footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:40px 0 24px}
+    .ft-main{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px}
+    @media(min-width:640px){.ft-main{grid-template-columns:2fr 1fr 1fr;gap:48px}}
+    .ft-brand .logo{margin-bottom:12px;font-size:1.2rem;display:block}
+    .ft-tagline{font-size:.86rem;color:var(--text-2);line-height:1.65;max-width:270px;margin-bottom:20px}
+    .ft-col-hdr{font-family:var(--f-heading);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-1);margin-bottom:14px}
+    .ft-links{display:flex;flex-direction:column;gap:8px}
+    .ft-links a{font-size:.86rem;color:var(--text-2);transition:color var(--ease)}
+    .ft-links a:hover{color:var(--text-1)}
+    .ft-bottom{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--border)}
+    @media(min-width:640px){.ft-bottom{flex-direction:row;justify-content:space-between;align-items:center}}
+    .ft-copy{font-size:.78rem;color:var(--text-3)}
+    .ft-legal{display:flex;gap:16px;flex-wrap:wrap}
+    .ft-legal a{font-size:.75rem;color:var(--text-3);transition:color var(--ease)}
+    .ft-legal a:hover{color:var(--text-2)}
+    .ft-legal a.active{color:var(--accent)}
+  </style>
+</head>
+<body>
+
+<header id="hdr" role="banner"><div class="wrap"><div class="hdr-in">
+  <a href="/" class="logo"><span class="logo-r">Rip</span><span class="logo-w">MyBadHabit</span></a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="/#cats">Topics</a><a href="/#articles">Articles</a><a href="/#about">About</a><a href="/#newsletter">Newsletter</a>
+  </nav>
+  <a href="/#start" class="hdr-cta">Start Here →</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></header>
+
+<nav id="mob-nav" aria-label="Mobile navigation" hidden>
+  <a href="/#cats" onclick="closeNav()">Topics</a><a href="/#articles" onclick="closeNav()">Articles</a>
+  <a href="/#start" onclick="closeNav()">Start Here</a><a href="/#about" onclick="closeNav()">About</a>
+</nav>
+
+<div class="wrap">
+  <div class="page-wrap">
+    <header class="page-hero">
+      <span class="page-badge">Legal</span>
+      <h1 class="page-h1">Privacy<br>Policy</h1>
+      <p class="page-meta"><strong>Last updated:</strong> June 12, 2026 &nbsp;·&nbsp; ripmybadhabit.com</p>
+    </header>
+
+    <div class="legal">
+
+      <h2>Introduction</h2>
+      <p>RipMyBadHabit is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit ripmybadhabit.com. Please read this policy carefully. If you do not agree with these terms, please do not access the site.</p>
+
+      <h2>Information We Collect</h2>
+
+      <h3>Information You Provide to Us</h3>
+      <p>We may collect information you voluntarily provide when you:</p>
+      <ul>
+        <li>Subscribe to our email newsletter</li>
+        <li>Fill out a contact form</li>
+        <li>Leave a comment on our blog</li>
+        <li>Interact with our website in other ways</li>
+      </ul>
+      <p>This information may include your name, email address, and any other information you choose to provide.</p>
+
+      <h3>Information Collected Automatically</h3>
+      <p>When you visit our website, we may automatically collect certain information about your device and your visit, including your IP address, browser type and version, operating system, referring website, pages viewed and time spent on those pages, date and time of your visit, and other diagnostic data.</p>
+
+      <h3>Cookies and Tracking Technologies</h3>
+      <p>We use cookies, web beacons, and similar tracking technologies to collect information about your browsing activities. We use the following types of cookies:</p>
+      <ul>
+        <li><strong>Essential cookies:</strong> Required for the website to function properly.</li>
+        <li><strong>Analytics cookies:</strong> Help us understand how visitors interact with our site (e.g., Google Analytics).</li>
+        <li><strong>Advertising cookies:</strong> Used by our advertising partners to deliver relevant ads and track ad performance.</li>
+      </ul>
+      <p>You can control cookies through your browser settings. Note that disabling cookies may affect the functionality of certain parts of our website.</p>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Operate, maintain, and improve our website</li>
+        <li>Send you newsletters and other communications you have opted into</li>
+        <li>Respond to your inquiries and provide customer support</li>
+        <li>Analyze usage trends to improve content and user experience</li>
+        <li>Display relevant advertisements</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+
+      <h3>Advertising and Affiliate Partners</h3>
+      <p>We participate in affiliate marketing programs and may earn commissions on purchases made through links on our site. Our partners include:</p>
+      <ul>
+        <li><strong>Google AdSense</strong> — Google may use cookies to serve ads based on your prior visits to our website and other websites. You can opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google's Ads Settings</a>.</li>
+        <li><strong>Amazon Associates</strong> — As an Amazon Associate, we earn from qualifying purchases. Amazon may use cookies to track referrals.</li>
+        <li><strong>Impact.com</strong> — We use Impact as an affiliate network to partner with brands such as BetterHelp, Headspace, Calm, and others. Impact may use cookies to track affiliate referrals.</li>
+      </ul>
+
+      <h3>Analytics</h3>
+      <p>We use Google Analytics to analyze the use of our website. Google Analytics collects information such as how often users visit the site, what pages they visit, and what other sites they used prior to visiting. You can learn more at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h3>Email Service Provider</h3>
+      <p>If you subscribe to our newsletter, your email address will be stored by our email service provider. You can unsubscribe at any time using the link provided in each email.</p>
+
+      <h2>Data Sharing</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share information with service providers who assist us in operating our website, advertising and affiliate partners as described above, and law enforcement or regulatory authorities if required by law.</p>
+
+      <h2>Data Security</h2>
+      <p>We implement reasonable security measures to protect your personal information. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+      <h2>Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> You may request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction:</strong> You may request that we correct inaccurate or incomplete data.</li>
+        <li><strong>Deletion:</strong> You may request that we delete your personal data.</li>
+        <li><strong>Opt-out:</strong> You may opt out of receiving marketing communications at any time.</li>
+      </ul>
+
+      <h3>California Residents (CCPA)</h3>
+      <p>If you are a California resident, you have the right to request disclosure of the categories and specific pieces of personal information we have collected about you, the right to request deletion of your personal information, and the right to opt out of the sale of your personal information. We do not sell personal information.</p>
+
+      <h3>European Residents (GDPR)</h3>
+      <p>If you are located in the European Economic Area, you have additional rights under the General Data Protection Regulation, including the right to access, rectify, port, and erase your data, as well as the right to restrict and object to certain processing of your data.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Our website is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete that information.</p>
+
+      <h2>Links to Other Websites</h2>
+      <p>Our website may contain links to third-party websites and services, including affiliate links. We are not responsible for the privacy practices or content of those third-party sites. We encourage you to read the privacy policies of any third-party site you visit.</p>
+
+      <h2>Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Your continued use of the site after any changes constitutes your acceptance of the new Privacy Policy.</p>
+
+      <h2>Contact Us</h2>
+      <div class="contact-box">
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <p><strong>Email:</strong> <a href="mailto:contact@ripmybadhabit.com">contact@ripmybadhabit.com</a></p>
+        <p><strong>Website:</strong> <a href="https://ripmybadhabit.com">ripmybadhabit.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer role="contentinfo"><div class="wrap">
+  <div class="ft-main">
+    <div class="ft-brand"><a href="/" class="logo"><span class="logo-r">Rip</span><span class="logo-w">MyBadHabit</span></a><p class="ft-tagline">No-BS strategies backed by science to break every bad habit holding you back.</p></div>
+    <div><p class="ft-col-hdr">Topics</p><ul class="ft-links"><li><a href="/#cats">Addiction &amp; Vaping</a></li><li><a href="/#cats">Digital Habits</a></li><li><a href="/#cats">Procrastination</a></li><li><a href="/#cats">Health &amp; Diet</a></li><li><a href="/#cats">Mental Health</a></li></ul></div>
+    <div><p class="ft-col-hdr">Site</p><ul class="ft-links"><li><a href="/about/">About Us</a></li><li><a href="/start-here/">Start Here</a></li><li><a href="/newsletter/">Newsletter</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 RipMyBadHabit.com — All rights reserved.</p>
+    <nav class="ft-legal" aria-label="Legal">
+      <a href="/privacy/" class="active">Privacy Policy</a>
+      <a href="/terms/">Terms of Use</a>
+      <a href="/affiliate-disclosure/">Affiliate Disclosure</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </nav>
+  </div>
+</div></footer>
+
+<script>
+  const burger=document.getElementById('burgerBtn'),mobNav=document.getElementById('mob-nav');
+  burger.addEventListener('click',()=>{const o=!mobNav.classList.contains('open');mobNav.classList.toggle('open',o);mobNav.hidden=!o;burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+  function closeNav(){mobNav.classList.remove('open');mobNav.hidden=true;burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+</script>
+</body>
+</html>

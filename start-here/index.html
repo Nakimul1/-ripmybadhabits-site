@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Here | RipMyBadHabit</title>
+  <meta name="description" content="New to RipMyBadHabit? Find your habit, get your 7-day plan, and start breaking the cycle today.">
+  <link rel="canonical" href="https://ripmybadhabit.com/start-here/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0B0B0C;--bg-alt:#0F0F11;--surface:#141416;--accent:#E8321F;--accent-dk:#C02718;--text-1:#F0EBE2;--text-2:#8A8A96;--text-3:#4A4A58;--border:#252528;--border-sub:#1C1C1F;--f-display:'Anton',sans-serif;--f-heading:'Barlow Condensed',sans-serif;--f-body:'Inter',sans-serif;--r:6px;--r-lg:10px;--ease:.22s ease;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text-1);font-family:var(--f-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}ul{list-style:none}
+    button{cursor:pointer;border:none;background:none;font-family:var(--f-body)}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    @media(min-width:768px){.wrap{padding:0 32px}}
+    #hdr{position:fixed;top:0;left:0;right:0;z-index:200;padding:12px 0;background:rgba(11,11,12,.95);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--border)}
+    .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-family:var(--f-display);font-size:1.3rem;letter-spacing:.02em;flex-shrink:0;line-height:1}
+    .logo-r{color:var(--accent)}.logo-w{color:var(--text-1)}
+    .main-nav{display:none}
+    @media(min-width:900px){.main-nav{display:flex;align-items:center;gap:26px}.main-nav a{font-family:var(--f-heading);font-weight:600;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);transition:color var(--ease)}.main-nav a:hover{color:var(--text-1)}}
+    .hdr-cta{display:none}
+    @media(min-width:600px){.hdr-cta{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#fff;font-family:var(--f-heading);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:var(--r);transition:background var(--ease);white-space:nowrap}.hdr-cta:hover{background:var(--accent-dk)}}
+    .burger{display:flex;flex-direction:column;gap:5px;padding:4px}
+    @media(min-width:900px){.burger{display:none}}
+    .burger span{display:block;width:23px;height:2px;background:var(--text-1);transition:transform var(--ease),opacity var(--ease);transform-origin:center}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    #mob-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:199;padding:90px 32px 40px;flex-direction:column}
+    #mob-nav.open{display:flex}
+    #mob-nav a{font-family:var(--f-display);font-size:clamp(1.8rem,6vw,2.6rem);text-transform:uppercase;color:var(--text-1);padding:16px 0;border-bottom:1px solid var(--border);transition:color var(--ease)}
+    #mob-nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{padding:110px 0 72px;background:var(--bg-alt);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 100% 0%,rgba(232,50,31,.06) 0%,transparent 60%);pointer-events:none}
+    .hero-inner{max-width:680px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-heading);font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+    .eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--accent)}
+    .hero-h1{font-family:var(--f-display);font-size:clamp(3rem,9vw,6.5rem);text-transform:uppercase;line-height:.9;letter-spacing:-.01em;color:var(--text-1);margin-bottom:24px}
+    .hero-h1 span{color:var(--accent)}
+    .hero-p{font-size:clamp(1rem,2vw,1.1rem);color:var(--text-2);max-width:520px;line-height:1.7;margin-bottom:32px}
+    .hero-p strong{color:var(--text-1);font-weight:500}
+    .step-pills{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-heading);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:30px;border:1px solid var(--border);color:var(--text-2);transition:all var(--ease)}
+    .pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    .pill:hover:not(.active){border-color:rgba(232,50,31,.5);color:var(--text-1)}
+
+    /* Steps */
+    .steps-section{padding:72px 0;background:var(--bg)}
+    .steps-grid{display:grid;grid-template-columns:1fr;gap:0}
+    @media(min-width:768px){.steps-grid{grid-template-columns:repeat(3,1fr);gap:2px}}
+    .step-card{background:var(--surface);border:1px solid var(--border);padding:32px;position:relative;transition:border-color var(--ease)}
+    .step-card:hover{border-color:rgba(232,50,31,.4)}
+    @media(min-width:768px){.step-card:not(:last-child)::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);width:2px;height:40%;background:var(--border)}}
+    .step-num{font-family:var(--f-display);font-size:3.5rem;color:var(--accent);opacity:.2;line-height:1;margin-bottom:8px}
+    .step-title{font-family:var(--f-heading);font-weight:800;font-size:1.2rem;text-transform:uppercase;color:var(--text-1);margin-bottom:10px}
+    .step-desc{font-size:.9rem;color:var(--text-2);line-height:1.65}
+    .step-link{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-heading);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:14px;transition:gap var(--ease)}
+    .step-link:hover{gap:9px}
+
+    /* Section header */
+    .sec-hdr{margin-bottom:36px}
+    .sec-eyebrow{font-family:var(--f-heading);font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+    .sec-eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--accent)}
+    .sec-title{font-family:var(--f-heading);font-weight:800;font-size:clamp(1.7rem,3.5vw,2.4rem);text-transform:uppercase;letter-spacing:-.01em;color:var(--text-1);line-height:1.08}
+
+    /* Guide grid */
+    .guides-section{padding:72px 0;background:var(--bg-alt);border-top:1px solid var(--border)}
+    .cat-section{margin-bottom:52px}
+    .cat-section:last-child{margin-bottom:0}
+    .cat-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-heading);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);border:1px solid var(--border);padding:4px 12px;border-radius:3px;margin-bottom:20px}
+    .guides-list{display:flex;flex-direction:column;gap:12px}
+    .guide-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:0;overflow:hidden;display:flex;align-items:stretch;transition:border-color var(--ease),transform var(--ease),box-shadow var(--ease)}
+    .guide-card:hover{border-color:rgba(232,50,31,.5);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+    .guide-accent{width:4px;background:var(--accent);flex-shrink:0}
+    .guide-body{padding:18px 20px;flex:1;display:flex;align-items:center;justify-content:space-between;gap:16px;min-width:0}
+    .guide-text{flex:1;min-width:0}
+    .guide-cat{font-family:var(--f-heading);font-weight:700;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:4px}
+    .guide-title{font-family:var(--f-heading);font-weight:800;font-size:clamp(.95rem,2vw,1.1rem);text-transform:uppercase;color:var(--text-1);line-height:1.2;margin-bottom:6px}
+    .guide-desc{font-size:.83rem;color:var(--text-2);line-height:1.5}
+    .guide-arrow{font-family:var(--f-heading);font-weight:700;font-size:.9rem;color:var(--accent);flex-shrink:0;transition:transform var(--ease)}
+    .guide-card:hover .guide-arrow{transform:translateX(4px)}
+    .coming-soon{background:var(--surface);border:1px dashed var(--border);border-radius:var(--r-lg);padding:14px 18px;font-size:.85rem;color:var(--text-3);text-align:center;font-family:var(--f-heading);letter-spacing:.06em;text-transform:uppercase}
+
+    /* Philosophy */
+    .phil-section{padding:72px 0;background:var(--bg)}
+    .phil-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:640px){.phil-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.phil-grid{grid-template-columns:repeat(4,1fr)}}
+    .phil-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px}
+    .phil-num{font-family:var(--f-display);font-size:2rem;color:var(--accent);opacity:.25;line-height:1;margin-bottom:10px}
+    .phil-title{font-family:var(--f-heading);font-weight:700;font-size:.9rem;text-transform:uppercase;color:var(--text-1);margin-bottom:8px}
+    .phil-desc{font-size:.83rem;color:var(--text-2);line-height:1.6}
+
+    /* CTA */
+    .cta-section{padding:80px 0;background:var(--surface);border-top:1px solid var(--border)}
+    .cta-inner{max-width:560px;margin:0 auto;text-align:center}
+    .cta-h2{font-family:var(--f-display);font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase;line-height:.92;color:var(--text-1);margin-bottom:16px}
+    .cta-h2 span{color:var(--accent)}
+    .cta-p{font-size:1rem;color:var(--text-2);margin-bottom:28px;line-height:1.65}
+    .btn-primary{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font-family:var(--f-heading);font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:var(--r);transition:background var(--ease),transform var(--ease),box-shadow var(--ease)}
+    .btn-primary:hover{background:var(--accent-dk);transform:translateY(-2px);box-shadow:0 10px 28px rgba(232,50,31,.3)}
+
+    footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:40px 0 24px}
+    .ft-main{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px}
+    @media(min-width:640px){.ft-main{grid-template-columns:2fr 1fr 1fr;gap:48px}}
+    .ft-brand .logo{margin-bottom:12px;font-size:1.2rem;display:block}
+    .ft-tagline{font-size:.86rem;color:var(--text-2);line-height:1.65;max-width:270px;margin-bottom:20px}
+    .ft-col-hdr{font-family:var(--f-heading);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-1);margin-bottom:14px}
+    .ft-links{display:flex;flex-direction:column;gap:8px}
+    .ft-links a{font-size:.86rem;color:var(--text-2);transition:color var(--ease)}
+    .ft-links a:hover{color:var(--text-1)}
+    .ft-bottom{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--border)}
+    @media(min-width:640px){.ft-bottom{flex-direction:row;justify-content:space-between;align-items:center}}
+    .ft-copy{font-size:.78rem;color:var(--text-3)}
+    .ft-legal{display:flex;gap:16px;flex-wrap:wrap}
+    .ft-legal a{font-size:.75rem;color:var(--text-3);transition:color var(--ease)}
+    .ft-legal a:hover{color:var(--text-2)}
+  </style>
+</head>
+<body>
+
+<header id="hdr" role="banner"><div class="wrap"><div class="hdr-in">
+  <a href="/" class="logo"><span class="logo-r">Rip</span><span class="logo-w">MyBadHabit</span></a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="/#cats">Topics</a><a href="/#articles">Articles</a><a href="/about/">About</a><a href="/newsletter/">Newsletter</a>
+  </nav>
+  <a href="/start-here/" class="hdr-cta" style="background:var(--accent-dk)">You're Here ✓</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></header>
+<nav id="mob-nav" aria-label="Mobile navigation" hidden>
+  <a href="/#cats" onclick="closeNav()">Topics</a><a href="/#articles" onclick="closeNav()">Articles</a>
+  <a href="/about/" onclick="closeNav()">About</a><a href="/newsletter/" onclick="closeNav()">Newsletter</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="eyebrow">New here?</div>
+      <h1 class="hero-h1">Let's <span>rip</span><br>one out.</h1>
+      <p class="hero-p">Welcome. If you're here, you're probably tired of a habit that's been running your life. <strong>Good — that frustration is fuel.</strong> Here's how to put it to work.</p>
+      <div class="step-pills">
+        <span class="pill active">Step 1: Pick your habit</span>
+        <span class="pill">Step 2: Get your plan</span>
+        <span class="pill">Step 3: Use the tools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section" aria-labelledby="steps-heading">
+  <div class="wrap">
+    <div class="steps-grid" role="list">
+      <div class="step-card" role="listitem">
+        <p class="step-num" aria-hidden="true">01</p>
+        <p class="step-title">Pick Your Habit</p>
+        <p class="step-desc">Find your habit in our guide library below. Every guide explains the neuroscience behind why it's hard, then gives you a step-by-step framework to break it.</p>
+        <span class="step-link">Start reading ↓</span>
+      </div>
+      <div class="step-card" role="listitem">
+        <p class="step-num" aria-hidden="true">02</p>
+        <p class="step-title">Get Your 7-Day Plan</p>
+        <p class="step-desc">Not sure where to start? Take our habit quiz and get a personalized 7-day email sequence — one small action per day, no overwhelm.</p>
+        <a href="/newsletter/" class="step-link">Get your plan →</a>
+      </div>
+      <div class="step-card" role="listitem">
+        <p class="step-num" aria-hidden="true">03</p>
+        <p class="step-title">Bookmark the Tools</p>
+        <p class="step-desc">Our Resources page has every app, book, and service we recommend — organized by habit. Your reference shelf for the whole journey.</p>
+        <a href="/resources/" class="step-link">Browse resources →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="guides-section" aria-labelledby="guides-heading">
+  <div class="wrap">
+    <div class="sec-hdr">
+      <p class="sec-eyebrow">All guides</p>
+      <h2 class="sec-title" id="guides-heading">Find Your Habit</h2>
+    </div>
+
+    <div class="cat-section">
+      <span class="cat-label">📱 Digital &amp; Productivity</span>
+      <div class="guides-list">
+        <a href="/doom-scrolling-guide/" class="guide-card">
+          <div class="guide-accent"></div>
+          <div class="guide-body">
+            <div class="guide-text">
+              <p class="guide-cat">Digital Habits · 9 min read</p>
+              <p class="guide-title">How to Stop Doom Scrolling</p>
+              <p class="guide-desc">Break the endless scroll cycle with a 3-phase method backed by behavioral research.</p>
+            </div>
+            <span class="guide-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+        <a href="/stop-procrastinating/" class="guide-card">
+          <div class="guide-accent"></div>
+          <div class="guide-body">
+            <div class="guide-text">
+              <p class="guide-cat">Productivity · 10 min read</p>
+              <p class="guide-title">How to Stop Procrastinating (For Real This Time)</p>
+              <p class="guide-desc">It's not laziness — it's an emotion regulation problem. Here's the 4-step fix.</p>
+            </div>
+            <span class="guide-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <span class="cat-label">🚭 Addiction &amp; Substances</span>
+      <div class="guides-list">
+        <a href="/quit-vaping-guide/" class="guide-card">
+          <div class="guide-accent"></div>
+          <div class="guide-body">
+            <div class="guide-text">
+              <p class="guide-cat">Addiction · 12 min read</p>
+              <p class="guide-title">How to Quit Vaping — What Actually Works in 2026</p>
+              <p class="guide-desc">The 3-leg method (NRT + behavior + support) that separates people who quit from people who keep trying.</p>
+            </div>
+            <span class="guide-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+        <div class="coming-soon">🍺 Quitting Alcohol — Coming Soon</div>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <span class="cat-label">🥗 Health &amp; Diet</span>
+      <div class="guides-list">
+        <a href="/break-sugar-addiction/" class="guide-card">
+          <div class="guide-accent"></div>
+          <div class="guide-body">
+            <div class="guide-text">
+              <p class="guide-cat">Health &amp; Diet · 11 min read</p>
+              <p class="guide-title">How to Break a Sugar Addiction in 30 Days</p>
+              <p class="guide-desc">A week-by-week plan to break the cycle without going miserable or cold turkey.</p>
+            </div>
+            <span class="guide-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+        <div class="coming-soon">🌙 How to Stop Stress Eating at Night — Coming Soon</div>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <span class="cat-label">🔧 Tools &amp; Reviews</span>
+      <div class="guides-list">
+        <a href="/best-habit-apps/" class="guide-card">
+          <div class="guide-accent"></div>
+          <div class="guide-body">
+            <div class="guide-text">
+              <p class="guide-cat">Tools &amp; Reviews · 13 min read</p>
+              <p class="guide-title">Best Apps to Break Bad Habits (2026)</p>
+              <p class="guide-desc">We tested 20+ apps and ranked the 12 that actually work, organized by habit.</p>
+            </div>
+            <span class="guide-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="phil-section" aria-labelledby="phil-heading">
+  <div class="wrap">
+    <div class="sec-hdr">
+      <p class="sec-eyebrow">How our guides work</p>
+      <h2 class="sec-title" id="phil-heading">The Same Framework,<br>Every Time</h2>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card"><p class="phil-num" aria-hidden="true">1</p><p class="phil-title">Understand the Mechanism</p><p class="phil-desc">We explain why the habit has its hooks in you — the neuroscience, psychology, and environmental triggers. You can't fix what you don't understand.</p></div>
+      <div class="phil-card"><p class="phil-num" aria-hidden="true">2</p><p class="phil-title">Follow a Structured Plan</p><p class="phil-desc">No vague advice. Every guide gives you a step-by-step framework with specific daily actions. You'll always know exactly what to do next.</p></div>
+      <div class="phil-card"><p class="phil-num" aria-hidden="true">3</p><p class="phil-title">Use the Right Tools</p><p class="phil-desc">We recommend apps, products, and professional resources when they genuinely help — and we tell you when they're not worth your money.</p></div>
+      <div class="phil-card"><p class="phil-num" aria-hidden="true">4</p><p class="phil-title">Get Support When Needed</p><p class="phil-desc">Some habits are symptoms of something deeper. We're always honest about when professional help is the smartest move — not a last resort.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h2">One habit.<br>One <span>guide.</span><br>One day at a time.</h2>
+      <p class="cta-p">You don't have to fix everything at once. Pick one habit, follow one guide, and let the momentum build. The work is worth it.</p>
+      <a href="/newsletter/" class="btn-primary">Get My 7-Day Plan →</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo"><div class="wrap">
+  <div class="ft-main">
+    <div class="ft-brand"><a href="/" class="logo"><span class="logo-r">Rip</span><span class="logo-w">MyBadHabit</span></a><p class="ft-tagline">No-BS strategies backed by science to break every bad habit holding you back.</p></div>
+    <div><p class="ft-col-hdr">Guides</p><ul class="ft-links"><li><a href="/doom-scrolling-guide/">Stop Doom Scrolling</a></li><li><a href="/quit-vaping-guide/">Quit Vaping</a></li><li><a href="/stop-procrastinating/">Stop Procrastinating</a></li><li><a href="/break-sugar-addiction/">Break Sugar Addiction</a></li><li><a href="/best-habit-apps/">Best Habit Apps</a></li></ul></div>
+    <div><p class="ft-col-hdr">Site</p><ul class="ft-links"><li><a href="/about/">About Us</a></li><li><a href="/newsletter/">Newsletter</a></li><li><a href="/resources/">Resources</a></li><li><a href="/write-for-us/">Write For Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 RipMyBadHabit.com — All rights reserved.</p>
+    <nav class="ft-legal" aria-label="Legal"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="/affiliate-disclosure/">Affiliate Disclosure</a></nav>
+  </div>
+</div></footer>
+
+<script>
+  const burger=document.getElementById('burgerBtn'),mobNav=document.getElementById('mob-nav');
+  burger.addEventListener('click',()=>{const o=!mobNav.classList.contains('open');mobNav.classList.toggle('open',o);mobNav.hidden=!o;burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+  function closeNav(){mobNav.classList.remove('open');mobNav.hidden=true;burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+</script>
+</body>
+</html>

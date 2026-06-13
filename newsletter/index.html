@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rip Report — Newsletter | RipMyBadHabit</title>
+  <meta name="description" content="Get a free personalized 7-day action plan to break your habit. One small step per day, delivered to your inbox. No spam, no fluff.">
+  <link rel="canonical" href="https://ripmybadhabit.com/newsletter/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0B0B0C;--bg-alt:#0F0F11;--surface:#141416;--accent:#E8321F;--accent-dk:#C02718;--text-1:#F0EBE2;--text-2:#8A8A96;--text-3:#4A4A58;--border:#252528;--border-sub:#1C1C1F;--f-display:'Anton',sans-serif;--f-heading:'Barlow Condensed',sans-serif;--f-body:'Inter',sans-serif;--r:6px;--r-lg:10px;--ease:.22s ease;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text-1);font-family:var(--f-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}ul{list-style:none}
+    button{cursor:pointer;border:none;background:none;font-family:var(--f-body)}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    @media(min-width:768px){.wrap{padding:0 32px}}
+    #hdr{position:fixed;top:0;left:0;right:0;z-index:200;padding:12px 0;background:rgba(11,11,12,.95);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--border)}
+    .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-family:var(--f-display);font-size:1.3rem;letter-spacing:.02em;flex-shrink:0;line-height:1}
+    .logo-r{color:var(--accent)}.logo-w{color:var(--text-1)}
+    .main-nav{display:none}
+    @media(min-width:900px){.main-nav{display:flex;align-items:center;gap:26px}.main-nav a{font-family:var(--f-heading);font-weight:600;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);transition:color var(--ease)}.main-nav a:hover{color:var(--text-1)}}
+    .hdr-cta{display:none}
+    @media(min-width:600px){.hdr-cta{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#fff;font-family:var(--f-heading);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:var(--r);transition:background var(--ease);white-space:nowrap}.hdr-cta:hover{background:var(--accent-dk)}}
+    .burger{display:flex;flex-direction:column;gap:5px;padding:4px}
+    @media(min-width:900px){.burger{display:none}}
+    .burger span{display:block;width:23px;height:2px;background:var(--text-1);transition:transform var(--ease),opacity var(--ease);transform-origin:center}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    #mob-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:199;padding:90px 32px 40px;flex-direction:column}
+    #mob-nav.open{display:flex}
+    #mob-nav a{font-family:var(--f-display);font-size:clamp(1.8rem,6vw,2.6rem);text-transform:uppercase;color:var(--text-1);padding:16px 0;border-bottom:1px solid var(--border);transition:color var(--ease)}
+    #mob-nav a:hover{color:var(--accent)}
+
+    /* Main layout */
+    .nl-page{display:grid;grid-template-columns:1fr;min-height:100vh}
+    @media(min-width:1024px){.nl-page{grid-template-columns:1fr 1fr}}
+
+    /* Left panel */
+    .nl-left{padding:120px 48px 80px;background:var(--bg-alt);border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
+    @media(max-width:1023px){.nl-left{padding:100px 20px 60px;border-right:none;border-bottom:1px solid var(--border)}}
+    @media(min-width:768px) and (max-width:1023px){.nl-left{padding:100px 32px 60px}}
+    .nl-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-heading);font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+    .nl-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--accent)}
+    .nl-h1{font-family:var(--f-display);font-size:clamp(2.8rem,6vw,5rem);text-transform:uppercase;line-height:.9;letter-spacing:-.01em;color:var(--text-1);margin-bottom:24px}
+    .nl-h1 span{color:var(--accent)}
+    .nl-lead{font-size:1rem;color:var(--text-2);line-height:1.72;margin-bottom:36px;max-width:460px}
+    .nl-lead strong{color:var(--text-1);font-weight:600}
+    .get-list{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+    .get-item{display:flex;gap:12px;align-items:flex-start}
+    .get-icon{flex-shrink:0;font-size:.9rem;margin-top:2px}
+    .get-text{font-size:.9rem;color:var(--text-2);line-height:1.6}
+    .get-text strong{color:var(--text-1);font-weight:600}
+    .no-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .no-tag{font-family:var(--f-heading);font-weight:600;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);background:var(--surface);border:1px solid var(--border);padding:4px 10px;border-radius:3px;text-decoration:line-through;text-decoration-color:rgba(232,50,31,.5)}
+
+    /* Right panel — signup */
+    .nl-right{padding:120px 48px 80px;display:flex;flex-direction:column;justify-content:center}
+    @media(max-width:1023px){.nl-right{padding:60px 20px 80px}}
+    @media(min-width:768px) and (max-width:1023px){.nl-right{padding:60px 32px 80px}}
+    .form-label-big{font-family:var(--f-heading);font-weight:800;font-size:clamp(1.2rem,2.5vw,1.6rem);text-transform:uppercase;color:var(--text-1);margin-bottom:6px;line-height:1.1}
+    .form-sublabel{font-size:.85rem;color:var(--text-2);margin-bottom:24px}
+
+    /* Habit chips */
+    .habit-chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}
+    .h-chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-family:var(--f-heading);font-weight:700;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;padding:9px 16px;border-radius:40px;cursor:pointer;transition:all var(--ease)}
+    .h-chip:hover,.h-chip.on{background:rgba(232,50,31,.1);border-color:var(--accent);color:var(--text-1)}
+    .h-chip.on{box-shadow:0 0 0 1px var(--accent)}
+
+    /* Email form */
+    .email-row{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+    @media(min-width:480px){.email-row{flex-direction:row}}
+    .email-input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:var(--text-1);font-family:var(--f-body);font-size:.95rem;outline:none;transition:border-color var(--ease);min-width:0}
+    .email-input::placeholder{color:var(--text-3)}
+    .email-input:focus{border-color:var(--accent)}
+    .submit-btn{background:var(--accent);color:#fff;font-family:var(--f-heading);font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px;border-radius:var(--r);white-space:nowrap;transition:background var(--ease),transform var(--ease);border:none;cursor:pointer}
+    .submit-btn:hover{background:var(--accent-dk);transform:translateY(-1px)}
+    .form-note{font-size:.75rem;color:var(--text-3);margin-bottom:40px}
+    .form-note a{color:var(--text-2);text-decoration:underline;text-underline-offset:3px}
+
+    /* Success state */
+    #success-msg{display:none;background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.4);border-radius:var(--r-lg);padding:24px;text-align:center;margin-bottom:28px}
+    #success-msg p{font-size:.95rem;color:var(--text-1);line-height:1.65}
+    #success-msg .success-title{font-family:var(--f-heading);font-weight:800;font-size:1.1rem;text-transform:uppercase;color:#4ade80;margin-bottom:6px}
+
+    /* Weekly section */
+    .divider{border:none;border-top:1px solid var(--border);margin:0 0 32px}
+    .weekly-title{font-family:var(--f-heading);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
+    .weekly-items{display:flex;flex-direction:column;gap:10px}
+    .w-item{display:flex;gap:10px;align-items:flex-start}
+    .w-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.55em}
+    .w-text{font-size:.88rem;color:var(--text-2);line-height:1.55}
+
+    footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:40px 0 24px}
+    .ft-main{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px}
+    @media(min-width:640px){.ft-main{grid-template-columns:2fr 1fr 1fr;gap:48px}}
+    .ft-brand .logo{margin-bottom:12px;font-size:1.2rem;display:block}
+    .ft-tagline{font-size:.86rem;color:var(--text-2);line-height:1.65;max-width:270px;margin-bottom:20px}
+    .ft-col-hdr{font-family:var(--f-heading);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-1);margin-bottom:14px}
+    .ft-links{display:flex;flex-direction:column;gap:8px}
+    .ft-links a{font-size:.86rem;color:var(--text-2);transition:color var(--ease)}
+    .ft-links a:hover{color:var(--text-1)}
+    .ft-bottom{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--border)}
+    @media(min-width:640px){.ft-bottom{flex-direction:row;justify-content:space-between;align-items:center}}
+    .ft-copy{font-size:.78rem;color:var(--text-3)}
+    .ft-legal{display:flex;gap:16px;flex-wrap:wrap}
+    .ft-legal a{font-size:.75rem;color:var(--text-3);transition:color var(--ease)}
+    .ft-legal a:hover{color:var(--text-2)}
+  </style>
+</head>
+<body>
+
+<header id="hdr" role="banner"><div class="wrap"><div class="hdr-in">
+  <a href="/" class="logo"><span class="logo-r">Rip</span><span class="logo-w">MyBadHabit</span></a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="/#cats">Topics</a><a href="/#articles">Articles</a><a href="/about/">About</a><a href="/newsletter/" style="color:var(--text-1)">Newsletter</a>
+  </nav>
+  <a href="/start-here/" class="hdr-cta">Start Here →</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></header>
+<nav id="mob-nav" aria-label="Mobile navigation" hidden>
+  <a href="/#cats" onclick="closeNav()">Topics</a><a href="/#articles" onclick="closeNav()">Articles</a>
+  <a href="/start-here/" onclick="closeNav()">Start Here</a><a href="/about/" onclick="closeNav()">About</a>
+</nav>
+
+<div class="nl-page">
+
+  <!-- LEFT: Pitch -->
+  <div class="nl-left">
+    <div class="nl-eyebrow">Free — no catch</div>
+    <h1 class="nl-h1">Your <span>7-day</span><br>habit plan.</h1>
+    <p class="nl-lead">Tell us what you're working on. We'll send you a <strong>free personalized action plan</strong> — one small, specific step per day for 7 days. No inspiration porn. No fluff. Just the next move.</p>
+
+    <div class="get-list" role="list">
+      <div class="get-item" role="listitem"><span class="get-icon" aria-hidden="true">✅</span><p class="get-text"><strong>7 daily emails</strong> tailored to your specific habit — each one takes under 10 minutes to act on</p></div>
+      <div class="get-item" role="listitem"><span class="get-icon" aria-hidden="true">✅</span><p class="get-text"><strong>Science-backed strategies</strong> from behavioral psychology and neuroscience</p></div>
+      <div class="get-item" role="listitem"><span class="get-icon" aria-hidden="true">✅</span><p class="get-text"><strong>Tool recommendations</strong> that actually help, for your specific habit</p></div>
+      <div class="get-item" role="listitem"><span class="get-icon" aria-hidden="true">✅</span><p class="get-text"><strong>Direct link</strong> to the full deep-dive guide for your habit</p></div>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--text-3);margin-bottom:10px;font-family:var(--f-heading);font-weight:600;text-transform:uppercase;letter-spacing:.1em;">What you won't get:</p>
+    <div class="no-list">
+      <span class="no-tag">Daily motivation quotes</span>
+      <span class="no-tag">Spam</span>
+      <span class="no-tag">Emails selling junk</span>
+      <span class="no-tag">Your email sold</span>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="nl-right">
+
+    <div id="success-msg" role="status" aria-live="polite">
+      <p class="success-title">You're in. ✓</p>
+      <p>Check your inbox — Day 1 of your plan is on its way. If you don't see it in 5 minutes, check your spam folder and mark us as safe.</p>
+    </div>
+
+    <form id="nlForm" onsubmit="handleSignup(event)" novalidate>
+      <p class="form-label-big">What habit are you<br>ready to rip?</p>
+      <p class="form-sublabel">Select one (or more) to personalize your plan:</p>
+
+      <div class="habit-chips" role="group" aria-label="Select your habit">
+        <button type="button" class="h-chip" onclick="toggleChip(this)">🚭 Quit Vaping</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">📱 Doom Scrolling</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">⏰ Procrastination</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">🍕 Stress Eating</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">🍬 Sugar Addiction</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">🍺 Alcohol</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">😴 Bad Sleep</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">💸 Overspending</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">🧠 Negative Self-Talk</button>
+        <button type="button" class="h-chip" onclick="toggleChip(this)">😤 Anger &amp; Reactivity</button>
+      </div>
+
+      <label for="emailInput" style="font-family:var(--f-heading);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);display:block;margin-bottom:8px;">Your Email Address</label>
+      <div class="email-row">
+        <input type="email" id="emailInput" name="email" class="email-input" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" class="submit-btn">Send My Plan →</button>
+      </div>
+      <p class="form-note">No spam. Unsubscribe anytime with one click. We never share your email. See our <a href="/privacy/">Privacy Policy</a>.</p>
+    </form>
+
+    <hr class="divider">
+
+    <p class="weekly-title">After Your 7-Day Plan — The Weekly Newsletter</p>
+    <div class="weekly-items">
+      <div class="w-item"><div class="w-dot" aria-hidden="true"></div><p class="w-text">New articles and guides as we publish them</p></div>
+      <div class="w-item"><div class="w-dot" aria-hidden="true"></div><p class="w-text">Quick tips and strategies you can use immediately</p></div>
+      <div class="w-item"><div class="w-dot" aria-hidden="true"></div><p class="w-text">The best new tools and apps for habit-breaking</p></div>
+      <div class="w-item"><div class="w-dot" aria-hidden="true"></div><p class="w-text">Reader stories from people who've broken their habits</p></div>
+      <div class="w-item"><div class="w-dot" aria-hidden="true"></div><p class="w-text">One email per week, max. No filler.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<footer role="contentinfo"><div class="wrap">
+  <div class="ft-main">
+    <div class="ft-brand"><a href="/" class="logo"><span class="logo-r">Rip</span><span class="logo-w">MyBadHabit</span></a><p class="ft-tagline">No-BS strategies backed by science to break every bad habit holding you back.</p></div>
+    <div><p class="ft-col-hdr">Guides</p><ul class="ft-links"><li><a href="/doom-scrolling-guide/">Stop Doom Scrolling</a></li><li><a href="/quit-vaping-guide/">Quit Vaping</a></li><li><a href="/stop-procrastinating/">Stop Procrastinating</a></li><li><a href="/break-sugar-addiction/">Break Sugar Addiction</a></li></ul></div>
+    <div><p class="ft-col-hdr">Site</p><ul class="ft-links"><li><a href="/about/">About Us</a></li><li><a href="/start-here/">Start Here</a></li><li><a href="/resources/">Resources</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 RipMyBadHabit.com — All rights reserved.</p>
+    <nav class="ft-legal" aria-label="Legal"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="/affiliate-disclosure/">Affiliate Disclosure</a></nav>
+  </div>
+</div></footer>
+
+<script>
+  function toggleChip(el){el.classList.toggle('on')}
+  function handleSignup(e){
+    e.preventDefault();
+    const form=document.getElementById('nlForm');
+    const msg=document.getElementById('success-msg');
+    form.style.display='none';
+    msg.style.display='block';
+    // TODO: Replace with your ESP form action (Mailchimp, ConvertKit, etc.)
+  }
+  const burger=document.getElementById('burgerBtn'),mobNav=document.getElementById('mob-nav');
+  burger.addEventListener('click',()=>{const o=!mobNav.classList.contains('open');mobNav.classList.toggle('open',o);mobNav.hidden=!o;burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+  function closeNav(){mobNav.classList.remove('open');mobNav.hidden=true;burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+</script>
+</body>
+</html>
